@@ -27,4 +27,7 @@
     <style name="CustomStyle">
         <item name="android:textColor">@android:color/black</item>
     </style>
+    <style name="TransparentText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#00000000</item>
+    </style>
 </resources>

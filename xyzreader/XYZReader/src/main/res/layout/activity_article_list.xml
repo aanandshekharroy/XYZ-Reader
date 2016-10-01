@@ -18,7 +18,7 @@
             app:collapsedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             app:expandedTitleTextAppearance="@style/TransparentText"
             app:contentScrim="@color/yellow500"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

@@ -4,7 +4,7 @@
     api-level="23"
     density="xhdpi"
     format="7"
-    timestamp="28630315176773"
+    timestamp="14047632948135"
     token="-4257774606418484057" >
 
     <task
@@ -21,14 +21,9 @@
         duration="0" />
 
     <artifact
-        location="/home/theseus/StudioProjects/xyzreader/xyzreader/XYZReader/build/intermediates/res/resources-debug.ap_"
-        type="RESOURCES" />
+        location="/home/theseus/StudioProjects/xyzreader/xyzreader/XYZReader/build/outputs/apk/XYZReader-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="28358656784338" >
-        <artifact
-            location="/home/theseus/StudioProjects/xyzreader/xyzreader/XYZReader/build/outputs/apk/XYZReader-debug.apk"
-            type="MAIN" />
-    </build>
     <build timestamp="28630315176773" >
         <artifact
             location="/home/theseus/StudioProjects/xyzreader/xyzreader/XYZReader/build/intermediates/res/resources-debug.ap_"

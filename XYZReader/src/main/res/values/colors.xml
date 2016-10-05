@@ -24,4 +24,5 @@
     <color name="ltgray">#ffe0e0e0</color>
     <color name="teal_500">#009688</color>
     <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
 </resources>

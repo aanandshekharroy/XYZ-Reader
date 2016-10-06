@@ -41,16 +41,19 @@ public class ArticleListActivity extends ActionBarActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
-        ((CollapsingToolbarLayout)findViewById(R.id.toolbar_container)).setTitle("XYZ Reader");
+
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
 
-        final View toolbarContainerView = findViewById(R.id.toolbar_container);
+//        final View toolbarContainerView = findViewById(R.id.toolbar_container);
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         getLoaderManager().initLoader(0, null, this);
+        CollapsingToolbarLayout collapsingToolbarLayout=((CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar));
+        collapsingToolbarLayout.setTitle("XYZ Reader");
+        collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(R.color.transparent)); // transperent color = #00000000
 
         if (savedInstanceState == null) {
             refresh();

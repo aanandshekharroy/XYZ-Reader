@@ -58,7 +58,7 @@
                 </FrameLayout>
                 <android.support.v7.widget.Toolbar
                     android:paddingLeft="48dp"
-
+                    android:elevation="@dimen/app_bar_elevation"
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"

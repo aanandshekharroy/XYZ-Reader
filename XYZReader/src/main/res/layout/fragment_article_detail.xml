@@ -128,7 +128,7 @@
             android:elevation="@dimen/fab_elevation"
             app:layout_anchor="@id/article_body"
             app:layout_anchorGravity="bottom|right|end"
-
+            android:padding="@dimen/fab_elevation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_share"

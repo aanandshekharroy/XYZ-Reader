@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.app.Activity;
 import android.app.ActivityOptions;
 import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
@@ -40,12 +41,12 @@ public class ArticleListActivity extends AppCompatActivity implements
     private Toolbar mToolbar;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
-
+    private Activity mActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
-
+        mActivity=this;
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
 
@@ -138,10 +139,13 @@ public class ArticleListActivity extends AppCompatActivity implements
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    View imageView= findViewById(R.id.photo);
-                    Bundle bundle = ActivityOptions
-                            .makeSceneTransitionAnimation(this,imageView,getString(R.string.transition_image))
-                            .toBundle();
+                    DynamicHeightNetworkImageView imageView= vh.thumbnailView;
+                    Bundle bundle = null;
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                        bundle = ActivityOptions
+                                .makeSceneTransitionAnimation(mActivity ,imageView,getString(R.string.transition_image))
+                                .toBundle();
+                    }
                     Intent intent=new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
                     startActivity(intent,bundle);

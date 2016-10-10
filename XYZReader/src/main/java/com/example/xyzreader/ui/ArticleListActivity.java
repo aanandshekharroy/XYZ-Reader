@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -22,6 +23,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.format.DateUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.xyzreader.R;
@@ -42,9 +44,12 @@ public class ArticleListActivity extends AppCompatActivity implements
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
     private Activity mActivity;
+    private View mView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        mView=
+//        getLayoutInflater().inflate(R.layout.list_item_article, null, false);
         setContentView(R.layout.activity_article_list);
         mActivity=this;
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -135,11 +140,12 @@ public class ArticleListActivity extends AppCompatActivity implements
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = getLayoutInflater().inflate(R.layout.list_item_article, parent, false);
+            final View detail_view=getLayoutInflater().inflate(R.layout.fragment_article_detail,parent,false);
             final ViewHolder vh = new ViewHolder(view);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    DynamicHeightNetworkImageView imageView= vh.thumbnailView;
+                    ImageView imageView= (ImageView) findViewById(R.id.photo);
                     Bundle bundle = null;
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
                         bundle = ActivityOptions
